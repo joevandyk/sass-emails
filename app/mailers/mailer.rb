@@ -1,5 +1,4 @@
 class Mailer < ActionMailer::Base
-  default_url_options[:host] = "www.example.com"
 
   def stylesheet_links
   end

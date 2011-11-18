@@ -1,6 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "rails/test_unit/railtie"
+require "sprockets/railtie"
 
 Bundler.require(*Rails.groups(:assets => %w(development test)))
 
@@ -16,5 +19,6 @@ module SassEmail
     config.cache_classes = false
     config.encoding = "utf-8"
     config.whiny_nils = true
+    routes.default_url_options[:host] = "www.example.com"
   end
 end
